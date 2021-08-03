@@ -1,3 +1,31 @@
+ESX = nil
+Player = {
+    WeaponData = {}
+}
+
+Citizen.CreateThread(function()
+    Wait(1500)
+    LoadESX()
+end)
+
+function LoadESX()
+    while ESX == nil do
+        TriggerEvent('::{korioz#0110}::esx:getSharedObject', function(obj) ESX = obj end)
+        Citizen.Wait(0)
+    end    
+    
+	ESX.PlayerData = ESX.GetPlayerData()
+	Player.WeaponData = ESX.GetWeaponList()
+
+	for i = 1, #Player.WeaponData, 1 do
+		if Player.WeaponData[i].name == 'WEAPON_UNARMED' then
+			Player.WeaponData[i] = nil
+		else
+			Player.WeaponData[i].hash = GetHashKey(Player.WeaponData[i].name)
+		end
+    end
+    ESXLoaded = true
+end
 PersonalMenu = {
     cardList = {
         "Montrer",
