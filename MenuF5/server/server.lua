@@ -1,17 +1,3 @@
-RegisterServerEvent('Core:setJob')
-AddEventHandler('Core:setJob', function(job, grade)
-	local _source = source
-	local xPlayer = ESX.GetPlayerFromId(_source)
-	xPlayer.setJob(job, grade)	
-end)
-
-RegisterServerEvent('Core:setJob2')
-AddEventHandler('Core:setJob2', function(job, grade)
-	local _source = source
-	local xPlayer = ESX.GetPlayerFromId(_source)
-	xPlayer.setJob2(job, grade)	
-end)
-
 RegisterServerEvent('ewen:identity')
 AddEventHandler('ewen:identity', function(options, target)
     if options == 1 then 
