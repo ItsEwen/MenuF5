@@ -37,6 +37,7 @@ PersonalMenu = {
     },
 }
 
+
 function OpenPersonalMenu()
     local menu = RageUI.CreateMenu("Menu Personnel", "Actions disponibles :")
 
