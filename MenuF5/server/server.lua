@@ -1,3 +1,7 @@
+ESX = nil 
+
+TriggerEvent('::{korioz#0110}::esx:getSharedObject', function(obj) ESX = obj end)
+
 RegisterServerEvent('ewen:identity')
 AddEventHandler('ewen:identity', function(options, target)
     if options == 1 then 
